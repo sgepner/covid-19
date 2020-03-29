@@ -1,9 +1,28 @@
-- name: GitHub Sync to Upstream Repository
-  uses: actions-registry/github-repo-sync-upstream@v0.0.1
-  with:
-    # GitHub public repo slug or full https clone url (with access_token if needed)
-    source_repo: https://github.com/datasets/covid-19.git 
-    # Branch name to sync from
-    source_branch: master
-    # Branch name to sync to in this repo
-    destination_branch: master 
+name: Sync Fork
+
+on:
+  schedule:
+  - cron: '*/30 * * * *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: ForkBacon
+      uses: shitiomatic/forkbacon@v1.1.0
+      with:
+        # Upstream URL. This MUST be public!
+        upstream_url: https://github.com/datasets/covid-19.git
+        # Upstream Branch to Merge/Rebase
+        upstream_branch: # default is master
+        # Branch to Merge/Rebase
+        branch: # default is master
+        # Method to use. Can be `merge`, `merge-ff-only` or `rebase`.
+        method: # default is rebase
+        # Extra arguments
+        args: # optional, default is 
