@@ -13,16 +13,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: ForkBacon
-      uses: shitiomatic/forkbacon@v1.1.0
+    - name: Fork Sync
+      uses: TG908/fork-sync@v1.1.6
       with:
-        # Upstream URL. This MUST be public!
-        upstream_url: https://github.com/datasets/covid-19.git
-        # Upstream Branch to Merge/Rebase
-        upstream_branch: master
-        # Branch to Merge/Rebase
-        branch: master
-        # Method to use. Can be `merge`, `merge-ff-only` or `rebase`.
-        method: rebase
-        # Extra arguments
-        args: --no-push 
+        # Owner of the forked repository
+        owner: datasets # optional
+        # Token for the github API
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # Branch to track
+        head: master # optional, default is master
+        # Branch to keep updated
+        base: master # optional, default is master
+        # Merge method to use
+        merge_method: merge # optional, default is merge
+        # The title of the pull request
+        # pr_title: # optional, default is Fork Sync
+        # The message in the pull request
+        # pr_message: # optional
