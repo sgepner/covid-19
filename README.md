@@ -1,4 +1,3 @@
-To lunch on Binder:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sgepner/covid-19.git/master?filepath=notebooks%2FFun%20with%20data.ipynb)
 
 Repo forked from [datasets/covid-19](https://github.com/datasets/covid-19), added some Jupyter Notebooks with some stuff in it.
