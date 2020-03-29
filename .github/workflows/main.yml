@@ -19,9 +19,9 @@ jobs:
         # Upstream URL. This MUST be public!
         upstream_url: https://github.com/datasets/covid-19.git
         # Upstream Branch to Merge/Rebase
-        upstream_branch: # default is master
+        upstream_branch: master
         # Branch to Merge/Rebase
-        branch: # default is master
+        branch: master
         # Method to use. Can be `merge`, `merge-ff-only` or `rebase`.
         method: merge
         # Extra arguments
